@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lost but found</title>
+</head>
+
+<style>
+    .enter {
+        background-color:#e6f7f4;
+        width: 300px;
+        height: 170px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 4px 5px 8px black;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 10px; 
+    }
+
+    .first, .second{
+        top: 15px;
+        position: relative;
+        left: 20px;
+        font-size: 18px;
+    }
+    button{
+        text-align: center;
+        position: relative;
+        left: 120px;
+        top: 35px;
+        font-size: 18px;
+    }
+
+
+</style>
+
+
+<body style="background-color: RGB(135,206,250);">
+    <a href="landing page.html">
+    <img src="images/back.jpg" style="height: 40px; width: 40px; border-radius: 50px;
+    box-shadow: 4px 5px 8px black; position: relative; left: 478px;">
+    </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="enter">
+        <div class="first">
+        <label for="username">Username</label>
+        <br>
+        <input type="text" placeholder="Username" id="username" required style="width: 220px; height: 15px;">
+    </div>
+        <br>
+        <div class="second">
+        <label for="password">Password</label>
+        <br>
+        <input type="password" placeholder="Password" id="password" required style="width: 220px; height: 15px;">
+        <br>
+    </div>
+        <button onclick="login()">Log in</button>
+    </div>
+
+    <script>
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+        if(username === "thomas" && password === "12345") {
+            window.location.href= "edit.html";
+        } else {
+            alert("Invalid details");
+        }
+    }
+    </script>
+</body>
+</html>
