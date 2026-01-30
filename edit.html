@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,17 @@
 </head>
 
 <style>
-    .info p{
+    .info p {
         font-size: 18px;
         color: black;
         font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: 300px;
+    }
+
+    .info p {
         position: relative;
         left: 10px;
         top: 20px;
@@ -27,12 +35,16 @@
         font-weight: bold;
     }
 
+    .info input {
+        box-sizing: border-box;
+        font-size: 15px;
+    }
 </style>
 
 
 <body style="background-color: RGB(135,206,250);">
     <a href="landing page.html">
-    <img src="images/elephant.jpg" style="height: 40px; width: 40px; border-radius: 50px;
+        <img src="images/elephant.jpg" style="height: 40px; width: 40px; border-radius: 50px;
     box-shadow: 4px 5px 8px black; position: relative; left: 280px;">
     </a>
     <img src="images/panda.jpg" style="height: 300px; width: 250px; border-radius: 10px;
@@ -40,94 +52,147 @@
 
     <br>
     <div class="info" style="background-color:#e6f7f4;
-    height: 320px; width: 300px; border-radius: 10px;
+    height: 320px; width: 320px; border-radius: 10px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
         <p><u>Personal info</u></p>
-        <p>Name: baby grandma</p>
-        <p>Age: 94</p>
-        <p>Patient number: 123</p>
-        <p>Condition Alzheimer's</p>
-        <p>Language: English / Vietnamese</p>
+        <p>Name: <span id="name"> grandma</span></p>
+        <p>Age: <span id="age"> 94</span></p>
+        <p>Patient number: <span id="patientNumber"> 123</span></p>
+        <p>Condition: <span id="condition"> Alzheimer's</span></p>
+        <p>Language: <span id="language"> English / Vietnamese</span></p>
         <br>
-    <div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </div>
+        <div class="change" style="position: relative; left: 105px;">
+            <button id="editBtn" style="font-size: 18px">Edit</button>
+            <button id="saveBtn" style="font-size: 18px" disabled>Save</button>
+        </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-    <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 300px;
+
+        <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 320px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
-        <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Residence</summary>
-        <p style=" position: relative; left: 10px;">Hamberly care homes, Templeton place</p>
-        <p style=" position: relative; left: 10px;">Address: Hurst Way, Nursling, Southmapton, SO16 0AZ</p>
+            <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Residence</summary>
+            <p style="position: relative; top: 5px;">Residence:</p>
+            <p style="position: relative; top: -5px;"><span id="home">Hamberly care homes, Templeton place</span></p>
+            <p style="position: relative; top: 5px;">Address:</p>
+            <p style="position: relative; top: -5px;"><span id="residence">Hurst Way, Nursling, Southmapton, SO16 0AZ</span></p>
+            <br>
+            <div class="change" style="position: relative; left: 105px;">
+                <button id="editBtn" style="font-size: 18px">Edit</button>
+                <button id="saveBtn" style="font-size: 18px" disabled>Save</button>
+            </div>
+        </details>
+
+
+
+
+
+
+
+
         <br>
-    <div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </details>
 
-    <br>
-
-    <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 300px;
+        <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 320px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
-        <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Contacts</summary>
-        <p style=" position: relative; left: 10px;">Name: Colleen</p>
-        <p style=" position: relative; left: 10px;">Relation: Care home staff</p>
-        <p style=" position: relative; left: 10px;">Phone: 1234567890</p>
-        <br>
-        <p style=" position: relative; left: 10px;">Name: Sam</p>
-        <p style=" position: relative; left: 10px;">Relation: Son</p>
-        <p style=" position: relative; left: 10px;">Phone: 1234567890</p>
-        <br>
-    <div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </details>
+            <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Contacts</summary>
+            <p style=" position: relative; left: 10px;">Name: Colleen</p>
+            <p style=" position: relative; left: 10px;">Relation: Care home staff</p>
+            <p style=" position: relative; left: 10px;">Phone: 1234567890</p>
+            <br>
+            <p style=" position: relative; left: 10px;">Name: Sam</p>
+            <p style=" position: relative; left: 10px;">Relation: Son</p>
+            <p style=" position: relative; left: 10px;">Phone: 1234567890</p>
+            <br>
+            <div class="change" style="position: relative; top: 10px; left: 90px;">
+                <button style="font-size: 18px">Edit</button>
+                <button style="font-size: 18px">Save</button>
+        </details>
 
-    <br>
+        <br>
 
-    <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 300px;
+        <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 320px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
-        <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Notes</summary>
-        <p style=" position: relative; left: 10px;">Mobility: walks indipendantly</p>
-        <p style=" position: relative; left: 10px;">Allergies: none</p>
-        <p style=" position: relative; left: 10px;">Cause of escape: distracted or <br> wants to go home</p>
-        <p style=" position: relative; left: 10px;">Care tips: speak softly and clearly </p>
-        <p style=" position: relative; left: 10px;">don't approach from behind</p>
+            <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Notes</summary>
+            <p style=" position: relative; left: 10px;">Mobility: walks indipendantly</p>
+            <p style=" position: relative; left: 10px;">Allergies: none</p>
+            <p style=" position: relative; left: 10px;">Cause of escape: distracted or <br> wants to go home</p>
+            <p style=" position: relative; left: 10px;">Care tips: speak softly and clearly </p>
+            <p style=" position: relative; left: 10px;">don't approach from behind</p>
+            <br>
+            <div class="change" style="position: relative; top: 10px; left: 90px;">
+                <button style="font-size: 18px">Edit</button>
+                <button style="font-size: 18px">Save</button>
+        </details>
+
         <br>
-<div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </details>
 
-    <br>
-
-    <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 300px;
+        <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 320px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
-        <summary style="position: relative; left: 10px; top: 5px; height: 30px">Additional notes</summary>
-        <p style=" position: relative; left: 10px;">Patient prone to escaping and is <br> commonly found near forests</p>
-        <p style=" position: relative; left: 10px;">if found, call care home, son or <br> EMS if niether are available</p>
+            <summary style="position: relative; left: 10px; top: 5px; height: 30px">Additional notes</summary>
+            <p style=" position: relative; left: 10px;">Patient prone to escaping and is <br> commonly found
+                near forests</p>
+            <p style=" position: relative; left: 10px;">if found, call care home, son or <br> EMS if niether are
+                available</p>
+            <br>
+            <div class="change" style="position: relative; left: 90px;">
+                <button style="font-size: 18px">Edit</button>
+                <button style="font-size: 18px">Save</button>
+        </details>
+
         <br>
-<div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </details>
 
-    <br>
-
-    <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 300px;
+        <details style="background-color: #e6f7f4; overflow: hidden; border-radius: 10px; width: 320px;
     margin: auto; margin-top: 10px; box-shadow: 4px 5px 8px black;">
-        <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Next steps</summary>
-        <p style=" position: relative; left: 10px;">If found, call care home or son and explain situation.</p>
-        <p style=" position: relative; left: 10px;">If not available, call EMS and wait with patient until help arrives.</p>
-        <br>
-<div class="change" style="position: relative; top: 10px; left: 90px;">
-    <button style="font-size: 18px">Edit</button>
-    <button style="font-size: 18px">Save</button>
-    </details>
+            <summary style="position: relative; left: 10px; top: 5px; height: 30px;">Next steps</summary>
+            <p style=" position: relative; left: 10px;">If found, call care home or son and explain situation.
+            </p>
+            <p style=" position: relative; left: 10px;">If not available, call EMS and wait with patient until
+                help arrives.</p>
+            <br>
+            <div class="change" style="position: relative; top: 10px; left: 90px;">
+                <button style="font-size: 18px">Edit</button>
+                <button style="font-size: 18px">Save</button>
+        </details>
+
+
+
+        <script>
+            const fields = ["name", "age", "language", "patientNumber", "condition", "residence", "home"];
+            const editBtn = document.getElementById("editBtn");
+            const saveBtn = document.getElementById("saveBtn");
+
+            editBtn.addEventListener("click", () => {
+                fields.forEach(field => {
+                    const span = document.getElementById(field);
+                    const value = span.textContent;
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    input.value = value;
+                    input.id = field + "input";
+                    input.style.width = "90%";
+                    span.replaceWith(input);
+                });
+                editBtn.disabled = true;
+                saveBtn.disabled = false;
+            });
+
+            saveBtn.addEventListener("click", () => {
+                fields.forEach(field => {
+                    const input = document.getElementById(field + "input");
+                    const span = document.createElement("span");
+                    span.id = field;
+                    span.textContent = input.value;
+                    input.replaceWith(span);
+                });
+                editBtn.disabled = false;
+                saveBtn.disabled = true;
+            });
+        </script>
+
+
 </body>
+
 </html>
